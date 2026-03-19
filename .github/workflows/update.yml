@@ -1,4 +1,4 @@
-name: Update list every 30 min (no Python)
+name: Update list every 30 min
 
 on:
   schedule:
@@ -10,7 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write   # 🔥 ВАЖНО
+      contents: write
+
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
     steps:
       - name: Checkout repo
@@ -18,7 +21,7 @@ jobs:
         with:
           persist-credentials: true
 
-      - name: Download and process list
+      - name: Download and trim list
         run: |
           curl -s https://raw.githubusercontent.com/VPN-cat/VPN/refs/heads/main/configs/VPN-cat-top-50 \
           | tail -n +6 > output.txt
