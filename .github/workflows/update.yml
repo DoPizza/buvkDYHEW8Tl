@@ -1,4 +1,4 @@
-name: Update list every 30 min (base64)
+name: Update list every 30 min (no Python)
 
 on:
   schedule:
@@ -10,10 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     permissions:
-      contents: write
-
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+      contents: write   # 🔥 ВАЖНО
 
     steps:
       - name: Checkout repo
@@ -21,16 +18,15 @@ jobs:
         with:
           persist-credentials: true
 
-      - name: Download, trim and encode base64
+      - name: Download and process list
         run: |
           curl -s https://raw.githubusercontent.com/VPN-cat/VPN/refs/heads/main/configs/VPN-cat-top-50 \
-          | tail -n +6 \
-          | base64 -w 0 > output.txt
+          | tail -n +6 > output.txt
 
       - name: Commit & push if changed
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
           git add output.txt
-          git diff --cached --quiet || git commit -m "Auto update (base64)"
+          git diff --cached --quiet || git commit -m "Auto update list"
           git push
