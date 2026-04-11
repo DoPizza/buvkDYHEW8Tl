@@ -23,7 +23,7 @@ jobs:
 
       - name: Download and trim list
         run: |
-          curl -s https://raw.githubusercontent.com/VPN-cat/VPN/refs/heads/main/configs/VPN-cat-top-50 \
+          curl -s https://raw.githubusercontent.com/ShadowException/VPN/refs/heads/main/configs/VPN-cat-top-50 \
           | tail -n +9 > output.txt
 
       - name: Commit & push if changed
