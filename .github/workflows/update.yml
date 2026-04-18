@@ -35,8 +35,8 @@ jobs:
           | tail -n +9 >> all.txt
 
           # IGARECK
-          #curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt \
-          #| tail -n +6 >> all.txt
+          curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt \
+          | tail -n +6 >> all.txt
           #curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt \
           #| tail -n +6 >> all.txt
 
