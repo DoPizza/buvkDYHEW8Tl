@@ -23,22 +23,27 @@ jobs:
 
       - name: Download and build lists
         run: |
-          # Основной файл
+          # Только CAT
           curl -s https://raw.githubusercontent.com/ShadowException/VPN/refs/heads/main/configs/VPN-cat-top-50 \
           | tail -n +9 > output.txt
 
           # Создаём all.txt (очищаем)
           > all.txt
 
-          # Добавляем первый источник
+          # CAT
           curl -s https://raw.githubusercontent.com/ShadowException/VPN/refs/heads/main/configs/VPN-cat-top-50 \
           | tail -n +9 >> all.txt
 
-          # Добавляем другие источники
-          curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt >> all.txt
+          # IGARECK
+          curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-CIDR-RU-all.txt \
+          | tail -n +6 >> all.txt
+          curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt \
+          | tail -n +6 >> all.txt
+
+          #ZIENG
           curl -s https://raw.githubusercontent.com/zieng2/wl/main/vless_universal.txt >> all.txt
 
-          # Удаляем дубликаты (по желанию)
+          # Удаляем дубликаты
           sort -u all.txt -o all.txt
 
       - name: Commit & push if changed
