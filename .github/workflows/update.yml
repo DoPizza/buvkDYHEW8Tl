@@ -1,3 +1,4 @@
+```yaml
 name: Update list every 10 min
 
 on:
@@ -21,15 +22,31 @@ jobs:
         with:
           persist-credentials: true
 
-      - name: Download and trim list
+      - name: Download and build lists
         run: |
+          # Основной файл
           curl -s https://raw.githubusercontent.com/ShadowException/VPN/refs/heads/main/configs/VPN-cat-top-50 \
           | tail -n +9 > output.txt
+
+          # Создаём all.txt (очищаем)
+          > all.txt
+
+          # Добавляем первый источник
+          curl -s https://raw.githubusercontent.com/ShadowException/VPN/refs/heads/main/configs/VPN-cat-top-50 \
+          | tail -n +9 >> all.txt
+
+          # Добавляем другие источники
+          curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt >> all.txt
+          curl -s https://raw.githubusercontent.com/zieng2/wl/main/vless_universal.txt >> all.txt
+
+          # Удаляем дубликаты (по желанию)
+          sort -u all.txt -o all.txt
 
       - name: Commit & push if changed
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add output.txt
+          git add output.txt all.txt
           git diff --cached --quiet || git commit -m "Auto update list"
           git push
+```
