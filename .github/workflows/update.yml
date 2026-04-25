@@ -49,9 +49,6 @@ jobs:
           | tail -n +6 >> all.txt
 
           
-          #ZIENG
-          curl -s https://raw.githubusercontent.com/zieng2/wl/main/vless_lite.txt >> all.txt
-
           ##MeraVPN
           #curl -s https://raw.githubusercontent.com/meraws/MeraServers/refs/heads/inside/sub \
           #| tail -n +7 >> all.txt
