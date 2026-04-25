@@ -30,7 +30,7 @@ jobs:
           #только mera
           #MeraVPN
           curl -s https://raw.githubusercontent.com/meraws/MeraServers/refs/heads/inside/sub \
-          | tail -n +6 >> mera.txt
+          | tail -n +7 >> mera.txt
           
           # Создаём all.txt (очищаем)
           > all.txt
@@ -50,7 +50,7 @@ jobs:
 
           #MeraVPN
           curl -s https://raw.githubusercontent.com/meraws/MeraServers/refs/heads/inside/sub \
-          | tail -n +6 >> all.txt
+          | tail -n +7 >> all.txt
           
           # Удаляем дубликаты
           sort -u all.txt -o all.txt
