@@ -49,9 +49,7 @@ jobs:
           | tail -n +6 >> all.txt
 
           
-          ##MeraVPN
-          #curl -s https://raw.githubusercontent.com/meraws/MeraServers/refs/heads/inside/sub \
-          #| tail -n +7 >> all.txt
+
           
           # Удаляем дубликаты
           sort -u all.txt -o all.txt
