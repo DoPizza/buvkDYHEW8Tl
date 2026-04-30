@@ -24,9 +24,9 @@ jobs:
       - name: Download and build lists
         run: |
 
-          # ===== test.txt (только строки с 🇷🇺) =====
+          export LANG=C.UTF-8
           curl -s https://raw.githubusercontent.com/meraws/MeraServers/refs/heads/inside/sub \
-          | grep "🇷🇺" > test.txt || true
+          | grep -a "🇷🇺" > test.txt || true
           
 
 
