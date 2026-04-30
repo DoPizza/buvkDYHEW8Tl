@@ -25,11 +25,15 @@ jobs:
         run: |
           # Только CAT
           curl -s https://raw.githubusercontent.com/ShadowException/VPN/refs/heads/main/configs/VPN-cat-top-50 \
-          | tail -n +9 > cat.txt
+          | tail -n +9 >> cat.txt
 
           #только mera
           curl -s https://raw.githubusercontent.com/meraws/MeraServers/refs/heads/inside/sub \
           | tail -n +7 >> mera.txt
+
+          # ===== test.txt (только строки с 🇷🇺) =====
+          curl -s https://raw.githubusercontent.com/meraws/MeraServers/refs/heads/inside/sub \
+          | grep "🇷🇺" >> test.txt
           
           # Создаём all.txt (очищаем)
           > all.txt
@@ -57,6 +61,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add cat.txt all.txt mera.txt
+          git add cat.txt all.txt mera.txt test.txt
           git diff --cached --quiet || git commit -m "Auto update list"
           git push
