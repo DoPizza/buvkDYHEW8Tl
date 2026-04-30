@@ -24,9 +24,7 @@ jobs:
       - name: Download and build lists
         run: |
           curl -s https://raw.githubusercontent.com/meraws/MeraServers/refs/heads/inside/sub \
-          | iconv -f utf-8 -t utf-8 -c \
-          | sed 's/%20/ /g' \
-          | grep -i "белый" > test.txt || true
+          | grep "LTE" > test.txt
 
           
 
