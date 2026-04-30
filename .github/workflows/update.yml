@@ -25,7 +25,7 @@ jobs:
         run: |
           # Только CAT
           curl -s https://raw.githubusercontent.com/ShadowException/VPN/refs/heads/main/configs/VPN-cat-top-50 \
-          | tail -n +9 >> cat.txt
+          | tail -n +9 > cat.txt
 
           #только mera
           curl -s https://raw.githubusercontent.com/meraws/MeraServers/refs/heads/inside/sub \
