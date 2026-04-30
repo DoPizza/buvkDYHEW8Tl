@@ -23,16 +23,15 @@ jobs:
 
       - name: Download and build lists
         run: |
+          # Только CAT
+          curl -s https://raw.githubusercontent.com/ShadowException/VPN/refs/heads/main/configs/VPN-cat-top-50 \
+          | tail -n +9 > cat.txt
 
-          # Только Mera
+          #только mera
           curl -s https://raw.githubusercontent.com/meraws/MeraServers/refs/heads/inside/sub \
           | tail -n +7 >> mera.txt
           
-          # ===== test.txt (только строки с 🇷🇺) =====
-          curl -s https://raw.githubusercontent.com/meraws/MeraServers/refs/heads/inside/sub \
-          | grep "🇷🇺" >> test.txt
-
-          # Создаём all.txt
+          # Создаём all.txt (очищаем)
           > all.txt
 
           # CAT
@@ -43,9 +42,14 @@ jobs:
           curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt \
           | tail -n +6 >> all.txt
 
+
+          
           curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt \
           | tail -n +6 >> all.txt
 
+          
+
+          
           # Удаляем дубликаты
           sort -u all.txt -o all.txt
 
@@ -53,6 +57,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add all.txt mera.txt test.txt
+          git add cat.txt all.txt mera.txt
           git diff --cached --quiet || git commit -m "Auto update list"
           git push
