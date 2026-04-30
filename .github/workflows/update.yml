@@ -26,7 +26,7 @@ jobs:
 
           # ===== test.txt (только строки с 🇷🇺) =====
           curl -s https://raw.githubusercontent.com/meraws/MeraServers/refs/heads/inside/sub \
-          | grep "🇷🇺" >> test.txt
+          | grep "🇷🇺" > test.txt
           
 
 
