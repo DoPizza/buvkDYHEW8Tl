@@ -23,10 +23,9 @@ jobs:
 
       - name: Download and build lists
         run: |
-
-          export LANG=C.UTF-8
           curl -s https://raw.githubusercontent.com/meraws/MeraServers/refs/heads/inside/sub \
-          | grep -a "🇷🇺" > test.txt || true
+          | grep "Белый" > test.txt || true
+
           
 
 
