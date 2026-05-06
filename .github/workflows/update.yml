@@ -44,23 +44,23 @@ jobs:
           | tail -n +11 > mera_flask.txt
 
           
-          # Очищаем catzieng.txt
-          > catzieng.txt
+          # Очищаем catigareck.txt
+          > catigareck.txt
           # CAT
           curl -s https://raw.githubusercontent.com/ShadowException/VPN/refs/heads/main/configs/VPN-cat-top-50 \
-          | tail -n +9 >> catzieng.txt
+          | tail -n +9 >> catigareck.txt
           # IGARECK
           curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt \
-          | tail -n +6 >> catzieng.txt
+          | tail -n +6 >> catigareck.txt
           curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt \
-          | tail -n +6 >> catzieng.txt
+          | tail -n +6 >> catigareck.txt
           # Удаляем дубликаты
-          sort -u catzieng.txt -o catzieng.txt
+          sort -u catzieng.txt -o catigareck.txt
 
       - name: Commit & push if changed
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add cat.txt mera.txt mera_lte.txt mera_default.txt mera_flask.txt catzieng.txt
+          git add cat.txt mera.txt mera_lte.txt mera_default.txt mera_flask.txt catigareck.txt
           git diff --cached --quiet || git commit -m "Auto update list"
           git push
