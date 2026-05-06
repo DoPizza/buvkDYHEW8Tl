@@ -1,2 +1,0 @@
-vless://e9f91f73-ffe8-4f18-9f35-635f2c9736ac@85.239.40.57:443?flow=xtls-rprx-vision&encryption=none&type=tcp&security=reality&fp=chrome&sni=cdn.trahodrom.fun&pbk=IBvNLerjNLpF4OpUX-wGJp8YDZrnKoh-gEItUDNT_Bg#1.%20%F0%9F%87%B7%F0%9F%87%BA%20RussiaETASSILKABOLSHENERABOTAETEENADOSMENITNACAT
-
