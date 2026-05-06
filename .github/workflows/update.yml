@@ -30,7 +30,7 @@ jobs:
 
           #test.txt = 
           curl -s https://raw.githubusercontent.com/opti4riponty-arch/VLESS-Co/refs/heads/main/VLESS%20%26%20Co \
-          | tail -n +11 > test.txt
+          | tail -n +12 > test.txt
 
 
           #mera.txt = mera all
