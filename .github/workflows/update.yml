@@ -27,6 +27,12 @@ jobs:
           curl -s https://raw.githubusercontent.com/ShadowException/VPN/refs/heads/main/configs/VPN-cat-top-50 \
           | tail -n +9 > cat.txt
 
+
+          #test.txt = 
+          curl -s https://raw.githubusercontent.com/opti4riponty-arch/VLESS-Co/refs/heads/main/VLESS%20%26%20Co \
+          | tail -n +11 > test.txt
+
+
           #mera.txt = mera all
           curl -s https://raw.githubusercontent.com/meraws/MeraVPN/refs/heads/inside/sub \
           | tail -n +11 > mera.txt
@@ -61,6 +67,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add cat.txt mera.txt mera_lte.txt mera_default.txt mera_flask.txt catigareck.txt
+          git add cat.txt mera.txt mera_lte.txt mera_default.txt mera_flask.txt catigareck.txt test.txt
           git diff --cached --quiet || git commit -m "Auto update list"
           git push
