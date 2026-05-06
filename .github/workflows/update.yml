@@ -33,7 +33,7 @@ jobs:
 
           #mera_lte.txt
           curl -s https://raw.githubusercontent.com/meraws/MeraVPN/refs/heads/inside/lte \
-          | tail -n +11 > mera_lte.txt
+          | tail -n +7 > mera_lte.txt
           
           #mera_default.txt
           curl -s https://raw.githubusercontent.com/meraws/MeraVPN/refs/heads/inside/default \
