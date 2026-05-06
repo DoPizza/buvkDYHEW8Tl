@@ -55,7 +55,7 @@ jobs:
           curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt \
           | tail -n +6 >> catigareck.txt
           # Удаляем дубликаты
-          sort -u catzieng.txt -o catigareck.txt
+          sort -u catigareck.txt -o catigareck.txt
 
       - name: Commit & push if changed
         run: |
