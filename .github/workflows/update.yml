@@ -33,7 +33,7 @@ jobs:
           | tail -n +11 > mera.txt
           
           # Очищаем catzieng.txt
-          > all.txt
+          > catzieng.txt
           # CAT
           curl -s https://raw.githubusercontent.com/ShadowException/VPN/refs/heads/main/configs/VPN-cat-top-50 \
           | tail -n +9 >> catzieng.txt
