@@ -32,32 +32,23 @@ jobs:
           curl -s https://raw.githubusercontent.com/meraws/MeraServers/refs/heads/inside/sub \
           | tail -n +11 > mera.txt
           
-          # Создаём all.txt (очищаем)
+          # Очищаем catzieng.txt
           > all.txt
-
           # CAT
           curl -s https://raw.githubusercontent.com/ShadowException/VPN/refs/heads/main/configs/VPN-cat-top-50 \
           | tail -n +9 >> all.txt
-
           # IGARECK
           curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt \
           | tail -n +6 >> all.txt
-
-
-          
           curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt \
           | tail -n +6 >> all.txt
-
-          
-
-          
           # Удаляем дубликаты
-          sort -u all.txt -o all.txt
+          sort -u catzieng.txt -o catzieng.txt
 
       - name: Commit & push if changed
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add cat.txt all.txt mera.txt
+          git add cat.txt catzieng.txt mera.txt
           git diff --cached --quiet || git commit -m "Auto update list"
           git push
