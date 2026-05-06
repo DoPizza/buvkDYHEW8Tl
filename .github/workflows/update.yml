@@ -23,14 +23,26 @@ jobs:
 
       - name: Download and build lists
         run: |
-          # Только CAT
+          #cat.txt
           curl -s https://raw.githubusercontent.com/ShadowException/VPN/refs/heads/main/configs/VPN-cat-top-50 \
           | tail -n +9 > cat.txt
 
-          #только mera
-          #MeraVPN
-          curl -s https://raw.githubusercontent.com/meraws/MeraServers/refs/heads/inside/sub \
+          #mera.txt = mera all
+          curl -s https://raw.githubusercontent.com/meraws/MeraVPN/refs/heads/inside/sub \
           | tail -n +11 > mera.txt
+
+          #mera_lte.txt
+          curl -s https://raw.githubusercontent.com/meraws/MeraVPN/refs/heads/inside/lte \
+          | tail -n +11 > mera_lte.txt
+          
+          #mera_default.txt
+          curl -s https://raw.githubusercontent.com/meraws/MeraVPN/refs/heads/inside/default \
+          | tail -n +11 > mera_default.txt
+
+          #mera_flask.txt
+          curl -s https://raw.githubusercontent.com/meraws/MeraVPN/refs/heads/inside/flask \
+          | tail -n +11 > mera_flask.txt
+
           
           # Очищаем catzieng.txt
           > catzieng.txt
@@ -49,6 +61,6 @@ jobs:
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add cat.txt catzieng.txt mera.txt
+          git add cat.txt mera.txt mera_lte.txt mera_default.txt mera_flask.txt catzieng.txt
           git diff --cached --quiet || git commit -m "Auto update list"
           git push
