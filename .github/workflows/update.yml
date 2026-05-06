@@ -36,12 +36,12 @@ jobs:
           > all.txt
           # CAT
           curl -s https://raw.githubusercontent.com/ShadowException/VPN/refs/heads/main/configs/VPN-cat-top-50 \
-          | tail -n +9 >> all.txt
+          | tail -n +9 >> catzieng.txt
           # IGARECK
           curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/Vless-Reality-White-Lists-Rus-Mobile.txt \
-          | tail -n +6 >> all.txt
+          | tail -n +6 >> catzieng.txt
           curl -s https://raw.githubusercontent.com/igareck/vpn-configs-for-russia/refs/heads/main/WHITE-SNI-RU-all.txt \
-          | tail -n +6 >> all.txt
+          | tail -n +6 >> catzieng.txt
           # Удаляем дубликаты
           sort -u catzieng.txt -o catzieng.txt
 
