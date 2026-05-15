@@ -1,4 +1,4 @@
-name: Update list every 10 min
+name: Update
 
 on:
   #schedule:
