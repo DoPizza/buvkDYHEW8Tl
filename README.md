@@ -4,3 +4,4 @@
 
 [**подписка с обходом БС**](https://raw.githubusercontent.com/DoPizza/buvkDYHEW8Tl/refs/heads/main/mera_lte.txt)
 
+используйте nekobox+ и проблем не будет, 4pda вам в помощь 
