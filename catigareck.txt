@@ -7,7 +7,6 @@ hysteria2://ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD@185.246.65.176:8220?sni=ge1.l
 hysteria2://ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD@212.192.14.212:8111?sni=nl8.lumenvpn.tech#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%5B%2ACIDR%5D
 hysteria2://ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD@212.192.14.212:8113?sni=lat1.lumenvpn.tech#%F0%9F%87%B1%F0%9F%87%BB%20Latvia%20%7C%20%F0%9F%8C%90%20%5B%2ACIDR%5D
 hysteria2://ODM2MzExOTcyMCwxNzkwNTMyNzE0ksak7YOGMD@84.252.100.204:8227?sni=sw.lumenvpn.tech#%F0%9F%87%B8%F0%9F%87%AA%20Sweden%20%5B%2ACIDR%5D
-hysteria2://aa6f8aaf-d7ff-46f8-a9a0-d143d7e71f71@nl01ntrhy01.tcp-reset-club.net:443?sni=tcp-reset-club.net#%F0%9F%87%B3%F0%9F%87%B1%20The%20Netherlands%20%5BSNI-RU%5D%20tcp-reset-club.net
 hysteria2://aa6f8aaf-d7ff-46f8-a9a0-d143d7e71f71@rou0001ntrhy01.tcp-reset-club.net:443?sni=tcp-reset-club.net#%F0%9F%87%B7%F0%9F%87%B4%20Romania%20%5BSNI-RU%5D%20tcp-reset-club.net
 hysteria2://f317b5d6-d399-4d3d-a051-89d674ae953c@msk.frkn.org:443?security=tls&sni=msk.frkn.org&alpn=h3&insecure=0#%F0%9F%87%B7%F0%9F%87%BA%20Russia%20%5B%2ACIDR%5D
 ss://Y2hhY2hhMjAtaWV0Zi1wb2x5MTMwNTpjNThkMTZlNTkzZDQ0ZjQy@158.173.221.214:11001#22.%20%F0%9F%87%AC%F0%9F%87%A7%20United%20Kingdom
